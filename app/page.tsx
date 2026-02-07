@@ -24,7 +24,7 @@ export default function Home() {
               </Link>
             </div>
 
-        <div className="grid gap-4">
+        <div className="hidden grid gap-4">
           {/* SSG */}
           <div className="border-2 border-blue-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
             <div className="text-3xl mb-3">📄</div>
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
 
         {/* Divisor */}
-        <div className="text-center py-4">
+        <div className="hidden text-center py-4">
           <h3 className="text-3xl font-semibold text-gray-200 mb-2">
             🔄 ISR - Incremental Static Regeneration
           </h3>
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         {/* Grid com os 3 tipos de revalidação */}
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="hidden grid md:grid-cols-3 gap-4">
           {/* Revalidação por Tempo */}
           <div className="border-2 border-blue-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
             <div className="text-3xl mb-3">⏱️</div>

@@ -75,7 +75,7 @@ export default async function ServerComponentPage() {
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
                 📊 Dados do Servidor
               </h3>
-              <div className="bg-white rounded-lg p-4 space-y-2 text-sm">
+              <div className="bg-white rounded-lg p-4 space-y-2 text-sm [&>p]:text-gray-600">
                 <p><strong>Hora do servidor:</strong> {serverTime}</p>
                 <p><strong>Node.js version:</strong> {nodeVersion}</p>
                 <p><strong>Ambiente:</strong> {process.env.NODE_ENV}</p>

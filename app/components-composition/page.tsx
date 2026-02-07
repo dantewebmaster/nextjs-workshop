@@ -40,7 +40,7 @@ export default async function CompositionPage() {
               Mantenha Server Components no nível superior e use Client Components
               apenas onde necessário (folhas da árvore).
             </p>
-            <pre className="bg-white p-4 rounded text-sm overflow-x-auto border">
+            <pre className="bg-black p-4 rounded text-sm overflow-x-auto border">
 {`// ✅ BOM: Server Component com Client "leaves"
 export default async function Page() {
   const data = await fetchData(); // Server

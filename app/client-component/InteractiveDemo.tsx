@@ -60,7 +60,7 @@ export function InteractiveDemo() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Digite algo..."
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
           />
           <p className="text-gray-600">
             Você digitou: <strong className="text-purple-600">{text || '(nada ainda)'}</strong>
@@ -76,7 +76,7 @@ export function InteractiveDemo() {
         <h3 className="text-lg font-semibold text-gray-800 mb-3">
           3️⃣ useEffect - Browser APIs
         </h3>
-        <div className="bg-white rounded-lg p-4 space-y-2 text-sm">
+        <div className="bg-white rounded-lg p-4 space-y-2 text-sm [&>p]:text-gray-600">
           <p>
             <strong>Componente montado:</strong>{' '}
             <span className={mounted ? 'text-green-600' : 'text-red-600'}>
