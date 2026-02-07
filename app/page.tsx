@@ -9,20 +9,39 @@ export default function Home() {
       </p>
 
       <div className="max-w-4xl w-full space-y-6">
-        {/* SSG */}
-        <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-          <h2 className="text-2xl font-semibold mb-3">📄 SSG - Static Site Generation</h2>
-          <p className="text-gray-300 mb-4">
-            Aprenda como o Next.js gera páginas estáticas no momento do build,
-            resultando em performance ultra-rápida.
-          </p>
-          <Link
-            href="/ssg-example"
-            className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Ver Exemplo SSG →
-          </Link>
-        </div>
+        {/* SSR */}
+          <div className="hidden border-2 border-emerald-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div className="text-3xl mb-3">🔄</div>
+              <h3 className="text-xl font-semibold mb-2">SSR - Server-Side Rendering</h3>
+              <p className="text-gray-300 text-sm mb-4">
+                Renderizado a cada requisição - sempre dados frescos e atualizados
+              </p>
+              <Link
+                href="/ssr-example"
+                className="inline-block bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 transition-colors text-sm w-full text-center"
+              >
+                Ver Exemplo →
+              </Link>
+            </div>
+
+        <div className="grid gap-4">
+          {/* SSG */}
+          <div className="border-2 border-blue-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div className="text-3xl mb-3">📄</div>
+            <h3 className="text-xl font-semibold mb-2">SSG - Static Site Generation</h3>
+            <p className="text-gray-300 text-sm mb-4">
+              Páginas geradas no build time - ultra-rápidas e servidas via CDN
+            </p>
+            <Link
+              href="/ssg-example"
+              className="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm w-full text-center"
+            >
+              Ver Exemplo →
+            </Link>
+          </div>
+
+
+          </div>
 
         {/* Divisor */}
         <div className="text-center py-4">
