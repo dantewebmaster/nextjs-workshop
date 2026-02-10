@@ -94,16 +94,16 @@ export default async function RevalidatePathPage() {
               <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
                 <div className="flex items-center gap-4">
                   <img
-                    src={user.picture.large}
-                    alt={`${user.name.first} ${user.name.last}`}
+                    src={user?.picture.large}
+                    alt={`${user?.name.first} ${user?.name.last}`}
                     className="w-20 h-20 rounded-full"
                   />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">
-                      {user.name.first} {user.name.last}
+                      {user?.name.first} {user?.name.last}
                     </h3>
-                    <p className="text-gray-600 text-sm">{user.email}</p>
-                    <p className="text-gray-600 text-sm">{user.location.city}, {user.location.country}</p>
+                    <p className="text-gray-600 text-sm">{user?.email}</p>
+                    <p className="text-gray-600 text-sm">{user?.location.city}, {user?.location.country}</p>
                   </div>
                 </div>
               </div>

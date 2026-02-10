@@ -3,9 +3,12 @@ import Link from 'next/link';
 import { ClientCounter } from './ClientCounter';
 import { ClientForm } from './ClientForm';
 
+// URL da API (usa Mockoon local durante build)
+const API_URL = process.env.API_URL || 'http://localhost:3001';
+
 // Fetch de dados no servidor
 async function getProducts() {
-  const res = await fetch('https://dummyjson.com/products?limit=3');
+  const res = await fetch(`${API_URL}/products?limit=3`);
   const data = await res.json();
   return data.products;
 }

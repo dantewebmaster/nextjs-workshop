@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+// URL da API (usa Mockoon local durante build)
+const API_URL = process.env.API_URL || 'http://localhost:3001';
+
 type Post = {
   id: number;
   title: string;
@@ -7,7 +10,7 @@ type Post = {
 };
 
 async function getPosts(): Promise<Post[]> {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5', {
+  const res = await fetch(`${API_URL}/posts?_limit=5`, {
     cache: 'force-cache'
   });
 

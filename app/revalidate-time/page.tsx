@@ -2,10 +2,13 @@
 // A página é regenerada automaticamente a cada X segundos
 import Link from 'next/link';
 
+// URL da API (usa Mockoon local durante build)
+const API_URL = process.env.API_URL || 'http://localhost:3001';
+
 export const revalidate = 10;
 
 async function getRandomQuote() {
-  const res = await fetch('https://dummyjson.com/quotes/random');
+  const res = await fetch(`${API_URL}/quotes/random`);
 
   if (!res.ok) {
     throw new Error('Falha ao buscar citação');

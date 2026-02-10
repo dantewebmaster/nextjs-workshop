@@ -1,0 +1,178 @@
+{
+  "uuid": "workshop-api",
+  "lastMigration": 32,
+  "name": "Workshop API",
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "posts-list",
+      "documentation": "Lista de posts (limitado a 10)",
+      "method": "get",
+      "endpoint": "posts",
+      "responses": [
+        {
+          "uuid": "posts-list-response",
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"userId\": 1,\n    \"id\": 1,\n    \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n    \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n  },\n  {\n    \"userId\": 1,\n    \"id\": 2,\n    \"title\": \"qui est esse\",\n    \"body\": \"est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\\nqui aperiam non debitis possimus qui neque nisi nulla\"\n  },\n  {\n    \"userId\": 1,\n    \"id\": 3,\n    \"title\": \"ea molestias quasi exercitationem repellat qui ipsa sit aut\",\n    \"body\": \"et iusto sed quo iure\\nvoluptatem occaecati omnis eligendi aut ad\\nvoluptatem doloribus vel accusantium quis pariatur\\nmolestiae porro eius odio et labore et velit aut\"\n  },\n  {\n    \"userId\": 1,\n    \"id\": 4,\n    \"title\": \"eum et est occaecati\",\n    \"body\": \"ullam et saepe reiciendis voluptatem adipisci\\nsit amet autem assumenda provident rerum culpa\\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\\nquis sunt voluptatem rerum illo velit\"\n  },\n  {\n    \"userId\": 1,\n    \"id\": 5,\n    \"title\": \"nesciunt quas odio\",\n    \"body\": \"repudiandae veniam quaerat sunt sed\\nalias aut fugiat sit autem sed est\\nvoluptatem omnis possimus esse voluptatibus quis\\nest aut tenetur dolor neque\"\n  },\n  {\n    \"userId\": 2,\n    \"id\": 6,\n    \"title\": \"dolorem eum magni eos aperiam quia\",\n    \"body\": \"ut aspernatur corporis harum nihil quis provident sequi\\nmollitia nobis aliquid molestiae\\nperspiciatis et ea nemo ab reprehenderit accusantium quas\\nvoluptate dolores velit et doloremque molestiae\"\n  },\n  {\n    \"userId\": 2,\n    \"id\": 7,\n    \"title\": \"magnam facilis autem\",\n    \"body\": \"dolore placeat quibusdam ea quo vitae\\nmagni quis enim qui quis quo nemo aut saepe\\nquidem repellat excepturi ut quia\\nsunt ut sequi eos ea sed quas\"\n  },\n  {\n    \"userId\": 2,\n    \"id\": 8,\n    \"title\": \"dolorem dolore est ipsam\",\n    \"body\": \"dignissimos aperiam dolorem qui eum\\nfacilis quibusdam animi sint suscipit qui sint possimus cum\\nquaerat magni maiores excepturi\\nipsam ut commodi dolor voluptatum modi aut vitae\"\n  },\n  {\n    \"userId\": 2,\n    \"id\": 9,\n    \"title\": \"nesciunt iure omnis dolorem tempora et accusantium\",\n    \"body\": \"consectetur animi nesciunt iure dolore\\nenim quia ad\\nveniam autem ut quam aut nobis\\net est aut quod aut provident voluptas autem voluptas\"\n  },\n  {\n    \"userId\": 2,\n    \"id\": 10,\n    \"title\": \"optio molestias id quia eum\",\n    \"body\": \"quo et expedita modi cum officia vel magni\\ndoloribus qui repudiandae\\nvero nisi sit\\nquos veniam quod sed accusamus veritatis error\"\n  }\n]"
+        }
+      ]
+    },
+    {
+      "uuid": "post-detail",
+      "documentation": "Detalhes de um post específico",
+      "method": "get",
+      "endpoint": "posts/:id",
+      "responses": [
+        {
+          "uuid": "post-detail-response",
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"userId\": {{urlParam 'id' '1'}},\n  \"id\": {{urlParam 'id' '1'}},\n  \"title\": \"Post número {{urlParam 'id' '1'}}\",\n  \"body\": \"Este é o conteúdo do post {{urlParam 'id' '1'}}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\"\n}"
+        }
+      ]
+    },
+    {
+      "uuid": "users-list",
+      "documentation": "Lista de usuários",
+      "method": "get",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "users-list-response",
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"id\": 1,\n    \"name\": \"Leanne Graham\",\n    \"username\": \"Bret\",\n    \"email\": \"leanne@example.com\",\n    \"address\": {\n      \"street\": \"Kulas Light\",\n      \"city\": \"Gwenborough\"\n    },\n    \"phone\": \"1-770-736-8031\",\n    \"website\": \"hildegard.org\",\n    \"company\": {\n      \"name\": \"Romaguera-Crona\"\n    }\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Ervin Howell\",\n    \"username\": \"Antonette\",\n    \"email\": \"ervin@example.com\",\n    \"address\": {\n      \"street\": \"Victor Plains\",\n      \"city\": \"Wisokyburgh\"\n    },\n    \"phone\": \"010-692-6593\",\n    \"website\": \"anastasia.net\",\n    \"company\": {\n      \"name\": \"Deckow-Crist\"\n    }\n  }\n]"
+        }
+      ]
+    },
+    {
+      "uuid": "user-detail",
+      "documentation": "Detalhes de um usuário específico",
+      "method": "get",
+      "endpoint": "users/:id",
+      "responses": [
+        {
+          "uuid": "user-detail-response",
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": {{urlParam 'id' '1'}},\n  \"name\": \"Usuário {{urlParam 'id' '1'}}\",\n  \"username\": \"user{{urlParam 'id' '1'}}\",\n  \"email\": \"user{{urlParam 'id' '1'}}@example.com\",\n  \"address\": {\n    \"street\": \"Rua Principal\",\n    \"city\": \"São Paulo\"\n  },\n  \"phone\": \"11-9999-9999\",\n  \"website\": \"example.com\",\n  \"company\": {\n    \"name\": \"Empresa {{urlParam 'id' '1'}}\"\n  }\n}"
+        }
+      ]    },
+    {
+      "uuid": "products-list",
+      "documentation": "Lista de produtos (DummyJSON compatible)",
+      "method": "get",
+      "endpoint": "products",
+      "responses": [
+        {
+          "uuid": "products-list-response",
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"products\": [\n    {\n      \"id\": 1,\n      \"title\": \"iPhone 9\",\n      \"description\": \"An apple mobile which is nothing like apple\",\n      \"price\": 549,\n      \"discountPercentage\": 12.96,\n      \"rating\": 4.69,\n      \"stock\": 94,\n      \"brand\": \"Apple\",\n      \"category\": \"smartphones\",\n      \"thumbnail\": \"https://i.dummyjson.com/data/products/1/thumbnail.jpg\"\n    },\n    {\n      \"id\": 2,\n      \"title\": \"iPhone X\",\n      \"description\": \"SIM-Free, Model A19211 6.5-inch Super Retina HD display\",\n      \"price\": 899,\n      \"discountPercentage\": 17.94,\n      \"rating\": 4.44,\n      \"stock\": 34,\n      \"brand\": \"Apple\",\n      \"category\": \"smartphones\",\n      \"thumbnail\": \"https://i.dummyjson.com/data/products/2/thumbnail.jpg\"\n    },\n    {\n      \"id\": 3,\n      \"title\": \"Samsung Galaxy S9\",\n      \"description\": \"Samsung's latest flagship with infinity display\",\n      \"price\": 599,\n      \"discountPercentage\": 8.14,\n      \"rating\": 4.33,\n      \"stock\": 50,\n      \"brand\": \"Samsung\",\n      \"category\": \"smartphones\",\n      \"thumbnail\": \"https://i.dummyjson.com/data/products/3/thumbnail.jpg\"\n    }\n  ],\n  \"total\": 3,\n  \"skip\": 0,\n  \"limit\": 3\n}"
+        }
+      ]
+    },
+    {
+      "uuid": "product-detail",
+      "documentation": "Detalhes de um produto específico (DummyJSON compatible)",
+      "method": "get",
+      "endpoint": "products/:id",
+      "responses": [
+        {
+          "uuid": "product-detail-response",
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": {{urlParam 'id' '1'}},\n  \"title\": \"iPhone {{urlParam 'id' '9'}}\",\n  \"description\": \"An apple mobile which is nothing like apple\",\n  \"price\": 549,\n  \"discountPercentage\": 12.96,\n  \"rating\": 4.69,\n  \"stock\": 94,\n  \"brand\": \"Apple\",\n  \"category\": \"smartphones\",\n  \"thumbnail\": \"https://i.dummyjson.com/data/products/1/thumbnail.jpg\"\n}"
+        }
+      ]
+    },
+    {
+      "uuid": "quotes-random",
+      "documentation": "Quote aleatória (DummyJSON compatible)",
+      "method": "get",
+      "endpoint": "quotes/random",
+      "responses": [
+        {
+          "uuid": "quotes-random-response",
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": 1,\n  \"quote\": \"Life is what happens when you're busy making other plans.\",\n  \"author\": \"John Lennon\"\n}"
+        }
+      ]
+    },
+    {
+      "uuid": "quote-detail",
+      "documentation": "Quote específica por ID (DummyJSON compatible)",
+      "method": "get",
+      "endpoint": "quotes/:id",
+      "responses": [
+        {
+          "uuid": "quote-detail-response",
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": {{urlParam 'id' '1'}},\n  \"quote\": \"Life is what happens when you're busy making other plans.\",\n  \"author\": \"John Lennon\"\n}"
+        }
+      ]    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [],
+  "proxyResHeaders": []
+}

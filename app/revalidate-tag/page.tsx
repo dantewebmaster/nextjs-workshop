@@ -6,6 +6,9 @@ import { unstable_cache } from 'next/cache';
 import { RevalidateButton } from '@/app/components/RevalidateButton';
 import { revalidateQuotesTag, revalidateProductsTag } from '@/app/actions/revalidate';
 
+// URL da API (usa Mockoon local durante build)
+const API_URL = process.env.API_URL || 'http://localhost:3001';
+
 // Função para buscar quotes com cache explícito
 const getQuotes = unstable_cache(
   async () => {
@@ -13,7 +16,7 @@ const getQuotes = unstable_cache(
 
     // Gera um ID aleatório baseado no timestamp para garantir dados diferentes
     const randomId = Math.floor(Math.random() * 1000) + 1;
-    const quote = await fetch(`https://dummyjson.com/quotes/${randomId}`).then(r => r.json());
+    const quote = await fetch(`${API_URL}/quotes/${randomId}`).then(r => r.json());
 
     return { data: quote, fetchedAt: timestamp };
   },
@@ -30,7 +33,7 @@ const getProducts = unstable_cache(
     const randomIds = Array.from({ length: 2 }, () => Math.floor(Math.random() * 100) + 1);
 
     const products = await Promise.all(
-      randomIds.map(id => fetch(`https://dummyjson.com/products/${id}`).then(r => r.json()))
+      randomIds.map(id => fetch(`${API_URL}/products/${id}`).then(r => r.json()))
     );
 
     return { data: products, fetchedAt: timestamp };

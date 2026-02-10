@@ -3,9 +3,12 @@
 
 import Link from 'next/link';
 
+// URL da API (usa Mockoon local durante build)
+const API_URL = process.env.API_URL || 'http://localhost:3001';
+
 // Server Component pode fazer fetch direto
 async function getServerData() {
-  const res = await fetch('https://dummyjson.com/products/1');
+  const res = await fetch(`${API_URL}/products/1`);
   return res.json();
 }
 

@@ -2,19 +2,47 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+### Desenvolvimento
+
+Para rodar o projeto em modo desenvolvimento:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Inicie o servidor Mock (em um terminal)
+pnpm mock
+
+# Inicie o Next.js (em outro terminal)
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Build
+
+Para fazer build do projeto localmente:
+
+```bash
+# Inicie o Mockoon primeiro
+pnpm exec mockoon-cli start --data mockoon-data.json --port 3001 &
+
+# Aguarde 2-3 segundos e execute o build
+pnpm build
+
+# Ou use o script integrado
+pnpm build:mock
+```
+
+> ℹ️ **Por que usar Mockoon?** Durante o build, o Next.js faz chamadas de API para gerar páginas estáticas (SSG/ISR). O Mockoon fornece um servidor de API local evitando dependências de APIs externas que podem ter rate limiting ou problemas de conectividade. Veja [MOCKOON.md](./MOCKOON.md) para mais detalhes.
+
+## Estrutura do Projeto
+
+Este workshop demonstra diferentes estratégias de renderização e data fetching no Next.js:
+
+- **Server Components** - Componentes renderizados no servidor
+- **Client Components** - Componentes interativos no cliente
+- **SSG** (Static Site Generation) - Geração estática no build
+- **SSR** (Server-Side Rendering) - Renderização a cada requisição
+- **ISR** (Incremental Static Regeneration) - Revalidação incremental
+- **Data Fetching** - Diferentes estratégias de cache (force-cache, no-store, revalidate)
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

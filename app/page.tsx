@@ -9,28 +9,24 @@ export default function Home() {
       </p>
 
       <div className="max-w-4xl w-full space-y-6">
-        {/* SSR */}
-          <div className="hidden border-2 border-emerald-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <div className="text-3xl mb-3">🔄</div>
-              <h3 className="text-xl font-semibold mb-2">SSR - Server-Side Rendering</h3>
-              <p className="text-gray-300 text-sm mb-4">
-                Renderizado a cada requisição - sempre dados frescos e atualizados
-              </p>
-              <Link
-                href="/ssr-example"
-                className="inline-block bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 transition-colors text-sm w-full text-center"
-              >
-                Ver Exemplo →
-              </Link>
-            </div>
+        {/* Divisor - Rendering Strategies */}
+        <div className="text-center py-4">
+          <h3 className="text-3xl font-semibold text-gray-200 mb-2">
+            🎯 Estratégias de Renderização
+          </h3>
+          <p className="text-gray-300 text-xl">
+            SSG, SSR e geração dinâmica de páginas estáticas
+          </p>
+        </div>
 
-        <div className="hidden grid gap-4">
-          {/* SSG */}
+        {/* Grid com Rendering Strategies */}
+        <div className="grid md:grid-cols-3 gap-4">
+          {/* SSG Básico */}
           <div className="border-2 border-blue-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
             <div className="text-3xl mb-3">📄</div>
-            <h3 className="text-xl font-semibold mb-2">SSG - Static Site Generation</h3>
+            <h3 className="text-xl font-semibold mb-2">SSG Básico</h3>
             <p className="text-gray-300 text-sm mb-4">
-              Páginas geradas no build time - ultra-rápidas e servidas via CDN
+              Página estática única gerada no build
             </p>
             <Link
               href="/ssg-example"
@@ -40,11 +36,39 @@ export default function Home() {
             </Link>
           </div>
 
-
+          {/* SSG com generateStaticParams */}
+          <div className="border-2 border-emerald-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div className="text-3xl mb-3">📚</div>
+            <h3 className="text-xl font-semibold mb-2">SSG com Params</h3>
+            <p className="text-gray-300 text-sm mb-4">
+              Múltiplas páginas estáticas de uma lista
+            </p>
+            <Link
+              href="/ssg-params"
+              className="inline-block bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 transition-colors text-sm w-full text-center"
+            >
+              Ver Exemplo →
+            </Link>
           </div>
 
-        {/* Divisor */}
-        <div className="hidden text-center py-4">
+          {/* SSR */}
+          <div className="border-2 border-orange-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <div className="text-3xl mb-3">🔄</div>
+            <h3 className="text-xl font-semibold mb-2">SSR</h3>
+            <p className="text-gray-300 text-sm mb-4">
+              Renderizado a cada requisição no servidor
+            </p>
+            <Link
+              href="/ssr-example"
+              className="inline-block bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm w-full text-center"
+            >
+              Ver Exemplo →
+            </Link>
+          </div>
+        </div>
+
+        {/* Divisor - ISR */}
+        <div className="text-center py-8">
           <h3 className="text-3xl font-semibold text-gray-200 mb-2">
             🔄 ISR - Incremental Static Regeneration
           </h3>
@@ -54,7 +78,7 @@ export default function Home() {
         </div>
 
         {/* Grid com os 3 tipos de revalidação */}
-        <div className="hidden grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-4">
           {/* Revalidação por Tempo */}
           <div className="border-2 border-blue-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
             <div className="text-3xl mb-3">⏱️</div>
@@ -99,6 +123,7 @@ export default function Home() {
               Ver Exemplo →
             </Link>
           </div>
+        </div>
         </div>
 
         {/* Divisor - Components */}
@@ -158,7 +183,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </div>
     </div>
   );
 }

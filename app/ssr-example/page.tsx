@@ -4,9 +4,12 @@
 import Link from 'next/link';
 import { headers } from 'next/headers';
 
+// URL da API (usa Mockoon local durante build)
+const API_URL = process.env.API_URL || 'http://localhost:3001';
+
 // Fetch sem cache = SSR (renderiza a cada requisição)
 async function getRealtimeData() {
-  const res = await fetch('https://dummyjson.com/quotes/random', {
+  const res = await fetch(`${API_URL}/quotes/random`, {
     cache: 'no-store' // Força SSR - sem cache
   });
 
