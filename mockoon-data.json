@@ -140,7 +140,7 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"id\": 1,\n  \"quote\": \"Life is what happens when you're busy making other plans.\",\n  \"author\": \"John Lennon\"\n}"
+          "body": "{\n  \"id\": {{faker 'number.int' min=1 max=100}},\n  \"quote\": \"{{faker 'lorem.sentence'}}\",\n  \"author\": \"{{faker 'person.fullName'}}\"\n}"
         }
       ]
     },
